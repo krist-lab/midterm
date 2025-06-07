@@ -42,6 +42,11 @@ $hover-text-offset: -20px;
 $transition-speed: 0.3s;
 $transition-timing: ease-in-out;
 
+$button-bg-color: #FFFFFF;
+$button-text-color: #FFB128;
+$button-hover-bg-color: #FFB128;
+$button-hover-text-color: #FFFFFF;
+
 @mixin button-base($width, $bg-color, $text-color) {
   text-decoration: none;
   padding: 10px 20px;
@@ -410,7 +415,7 @@ body {
 
 .spring-promo {
   width: 100%;
-  // background-color: $white-bg;
+  background-color: $light-gray-bg;
   padding: 40px 0;
   box-sizing: border-box;
 
@@ -425,7 +430,7 @@ body {
 
   .promo-image-wrapper {
     flex: 1;
-    min-width: 500px;
+    min-width: 400px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -519,9 +524,9 @@ body {
 
 .product {
   background-color: $white-bg;
-  border-radius: 10px;
+  border-radius: 16px;
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
-  padding: 20px;
+  padding: 23.9px 23.91px 46.9px 23.91px;
   text-align: center;
   position: relative;
   display: flex;
@@ -529,6 +534,10 @@ body {
   align-items: center;
   justify-content: flex-start;
   transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+  
+  width: 374.34px;
+  height: 490.34px;
+  box-sizing: border-box;
 
   &:hover {
     transform: translateY(-5px);
@@ -536,8 +545,8 @@ body {
   }
 
   .product-image-wrapper {
-    width: 100%;
-    height: 200px;
+    width: 326.527587890625px;
+    height: 326.5299987792969px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -576,7 +585,6 @@ body {
   }
 
   &.highlighted-product {
-    border: 2px solid #5C676D;
     box-shadow: 0 4px 20px rgba(92, 103, 109, 0.2);
   }
 }
@@ -584,17 +592,27 @@ body {
 .shop-button {
   text-align: center;
   padding: 40px 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-color: 1px ;
 
   button {
-    @include button-base(auto, $main-text-color, $white-bg);
-    padding: 15px 40px;
-    border-radius: 8px;
+    background-color: $button-bg-color;
+    color: $button-text-color;
+    height: 46px;
+    padding: 16px 36px;
+    border-radius: 80px;
     font-size: 16px;
+    border: 1px solid $button-bg-color;
+    border-top: 1px solid #E0E4EF;
     cursor: pointer;
+    transition: background-color 0.3s ease, color 0.3s ease;
 
     &:hover {
-      background-color: darken($main-text-color, 10%);
-      border-color: darken($main-text-color, 10%);
+      background-color: $button-hover-bg-color;
+      color: $button-hover-text-color;
+      border: none;
     }
   }
 }
@@ -939,6 +957,11 @@ body {
 
   .products-grid {
     grid-template-columns: 1fr;
+    .product {
+      width: 100%;
+      height: auto;
+      padding: 20px;
+    }
   }
   .magazine-info {
     grid-template-columns: 1fr;
